@@ -1,0 +1,23 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>video view</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+</head>
+<body>
+<h1>video list</h1>
+<span th:if="${fileList} != null">
+    <ul th:each="file : ${fileList}">
+        <a th:href="@{'/video/' + ${file.id}}"> <li th:text="${file.fileName}"></li></a>
+    </ul>
+
+</span>
+
+<span th:if="${displayVideoId}">
+    <h2>video data</h2>
+    <video autoplay="autoplay" width="320" preload="metadata" controls="controls">
+        <source th:src="@{'/videoDataRange/' + ${displayVideoId}} " type="video/mp4" />
+    </video>
+</span>
+</body>
+</html>

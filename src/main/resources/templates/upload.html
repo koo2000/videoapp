@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<body>
+<h1>uploadtest</h1>
+
+<form enctype="multipart/form-data" method="post" action="upload">
+
+
+    <div th:if="${updateSuccess}">upload success!!</div>
+    ファイル：<input type="file" name="uploadFile"/>
+    <br />
+    <input type="submit" value="upload"/>
+
+</form>
+
+</body>
+</html>
